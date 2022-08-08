@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mission to Mars Web Scraping-Challenge</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="jumbotron text-center">
+      <h1>Mission to Mars</h1>
+      <p>Brendan's Mission to Mars Webpage</p>
+      <br>
+      <p><a class="btn btn-success btn-lg active" href="/scrape" role="button">Scrape Data</a></p>
+    </div>
+
+    <h2>Mars Info</h2>
+
+    <h3>{{ display_data.news_title }}</h3>
+    <p>{{ display_data.news_p }}</p>
+  
+    <h4>Mars Picture URL</h4>
+    {{display_data.featured_image_url }}
+    {{display_data.featured_image_source }}    
+
+    <h5>Mars Facts</h5>
+    {{display_data.html_table | safe }}
+    {{display_data.facts_source }}
+
+    <h6>Mars Pics</h6>
+    {% for hemi in display_data.hemi_img_urls %}
+
+    {% endfor %}
+   </div>
+
+</body>
+
+</html>
